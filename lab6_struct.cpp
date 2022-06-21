@@ -3,7 +3,9 @@
 #include <iomanip>
 using namespace std;
 
-struct personal_info
+
+
+typedef struct personal_info
 {
     string lastname, firstname, fullname;
     int b_y; // getting the year from user
@@ -14,25 +16,30 @@ struct personal_info
     string T_month; // storing month
     string birthdate;
     char month[12][20] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-} p[5];
+} info;     //nickname for struct personal_info
 
 int main()
 {
-    system("clear");
+    info p[5];  //declare variable for struct
+    //system("clear");
     int count_rep = 0;
     int month_rep, major_rep; // indicating the index for array of the month
 
     time_t t = time(NULL);
     tm *timePtr = localtime(&t); // getting local time
 
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 3; i++)
     {
         cout << "\nEnter following information" <<endl;
-        cout << "\nEnter your last name: ";
-        cin >> p[i].lastname;
-        cout << "Enter your first name: ";
+        cout << "\nEnter your first name: ";
         cin >> p[i].firstname;
-        p[i].fullname = p[i].lastname + " " + p[i].firstname;
+        cout << "Enter your last name: ";
+        cin >> p[i].lastname;
+        for (int j=0; j<sizeof(p[i].lastname); j++){
+            p[i].lastname[j] = toupper(p[i].lastname[j]);
+        }
+        
+        p[i].fullname = p[i].firstname + " " + p[i].lastname;
     enter_month:
         cout << "Enter your date of birth in this format (mm dd yyyy): ";
         cin >> month_rep >> p[i].b_d >> p[i].b_y;
@@ -114,10 +121,8 @@ int main()
          << left
          << "Student ID"
          << "Major" << endl;
-    for (int j = 0; j < 5; j++)
+    for (int j = 0; j < 3; j++)
     {
-        // cout << p[j].count << "\t" << p[j].lastname << " " << p[j].firstname << "\t\t\t" << p[j].b_d << " " << p[j].T_month << " " << p[j].b_y << "\t\t\t" << p[j].age << "\t\t\t" << p[j].studentID << "\t\t\t" << p[j].major << endl;
-
         cout << setw(8)
              << left
              << p[j].count

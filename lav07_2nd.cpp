@@ -63,9 +63,17 @@ int main()
             }
             else
             {
+
                 word = word + x;
             }
             arr_word[i] = word;
+
+            // validating all input must be string
+            // if (checkNotAlpha(word))
+            // {
+            //     cout << "Input must be a string" << endl;
+            //     exit(0);
+            // }
         }
         num_line++;
     }
@@ -93,7 +101,8 @@ int main()
             uni_size++;
         }
     }
-     // print the occurance of each unique string
+
+    // print the occurance of each unique string
     int count = 0;
     for (int p = 0; p < uni_size; p++)
     {
@@ -111,7 +120,6 @@ int main()
     cout << "Total word is: " << size + 1<< endl;
     wordfile.close();
 
-    //append output into file "text_file001.txt"
     ofstream writefile("text_file001.txt", ios::app);
     int file_count = 0;
     writefile << "\n" << endl;
@@ -130,5 +138,6 @@ int main()
     }
     writefile << "Total word is: " << size  + 1<< endl;
     writefile.close();
+
     return 0;
 }

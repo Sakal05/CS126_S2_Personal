@@ -34,6 +34,7 @@ using namespace std;
 //     cout << "Others: " << other << endl;
 // }
 
+
 bool isNumber(string number)
 {
     for (int i = 0; i < number.length(); i++)
@@ -135,23 +136,26 @@ string samnang_reverse(string str){
 
 int main()
 {
-    string str;
-    cout << "Enter a string: ";
-    getline(cin, str);
-    //samnang_wordprocess(str);
+
+    typedef string drink_v;
+    drink_v a = " a ";
+    cout << a <<endl;
+    // cout << "Enter a string: ";
+    // getline(cin, str);
+    // //samnang_wordprocess(str);
     
-    if (isUpperCase(str) == true)
-    {
-        cout << "Upper: " << samnang_isupper(str);
-    }
-    if (isLowerCase(str) == true)
-    {
-        cout << "Lower: " << samnang_islower(str);
-    }
-    if (isNumber(str) == true)
-    {
-        cout << "digit: " << samnang_isdigit(str);
-    }
+    // if (isUpperCase(str) == true)
+    // {
+    //     cout << "Upper: " << samnang_isupper(str);
+    // }
+    // if (isLowerCase(str) == true)
+    // {
+    //     cout << "Lower: " << samnang_islower(str);
+    // }
+    // if (isNumber(str) == true)
+    // {
+    //     cout << "digit: " << samnang_isdigit(str);
+    // }
     
     return 0;
 }
